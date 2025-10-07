@@ -1,0 +1,258 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Базовый темный фон */
+    color: #fff;
+    overflow: hidden; /* Скрываем переполнение для анимации фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Градиентный фон (анимированный) */
+.gradient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0f9b0f, #00bcd4, #3f51b5, #9c27b0);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    z-index: -1; /* Позади всего контента */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Контейнер */
+.container {
+    background-color: rgba(33, 33, 33, 0.85); /* Темный, полупрозрачный */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    width: 85%;
+    max-width: 700px;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Эффект размытия фона */
+    position: relative; /* Для позиционирования элементов внутри */
+    z-index: 1;
+}
+
+/* Заголовок */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin: 0; /* Убираем стандартные отступы h1 */
+}
+
+/* Кнопка выхода */
+.logout-button {
+    background-color: #e91e63; /* Розовый цвет */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.logout-button:hover {
+    background-color: #c2185b;
+}
+
+/* Форма */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #bdbdbd;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 25px;
+    border: 1px solid #424242;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #424242;
+    color: #fff;
+    transition: border-color 0.2s ease-in-out;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #64b5f6;
+    outline: 0;
+    box="%23fff" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M7.204 10.342L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.658l-4.796 5.482a1 1 0 0 1-1.506 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+button {
+    background-color: #26a69a; /* Зеленый цвет */
+    color: #fff;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    background-color: #2bbbad;
+}
+
+/* Поле для отображения пароля */
+#password-container {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#password-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #bdbdbd;
+    font-size: 1.1rem;
+}
+
+#password {
+    padding: 16px;
+    background-color: #333;
+    border: 1px solid #424242;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-family: monospace;
+    word-break: break-word;
+    color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+/* === Стили для страницы логина === */
+.login-container {
+    background-color: rgba(33, 33, 33, 0.9); /* Менее прозрачный */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 85%;
+    max-width: 450px;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Эффект размытия фона */
+}
+
+.login-container h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 25px;
+    border: 1px solid #424242;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+.login-container button {
+    background-color: #26a69a; /* Зеленый цвет */
+    color: #fff;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-container button:hover {
+    background-color: #2bbbad;
+}
+
+/* Сообщения об ошибках (Flash) */
+.flashes {
+    list-style: none;  /* Убираем маркеры списка */
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.flashes li {
+    background-color: #e57373; /* Красный цвет для ошибок */
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 8px; /* Скругленные углы */
+    text-align: center;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container, .login-container {
+        width: 95%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .login-container h2 {
+        font-size: 1.75rem;
+    }
+
+    button, .logout-button {
+        font-size: 1.1rem;
+    }
+}
